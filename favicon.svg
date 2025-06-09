@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- White circular background with padding to prevent clipping -->
+  <circle cx="16" cy="16" r="14" fill="#fff"/>
+  
+  <!-- Black null symbol using filled paths with thicker stroke -->
+  <path d="M 16 5 A 11 11 0 0 1 27 16 A 11 11 0 0 1 16 27 A 11 11 0 0 1 5 16 A 11 11 0 0 1 16 5 Z M 16 8 A 8 8 0 0 0 8 16 A 8 8 0 0 0 16 24 A 8 8 0 0 0 24 16 A 8 8 0 0 0 16 8 Z" fill="#000"/>
+  
+  <!-- Thicker diagonal line that stays within the white circle -->
+  <path d="M 11 8 L 8 11 L 21 24 L 24 21 Z" fill="#000"/>
+  
+  <!-- Larger center dot -->
+  <circle cx="16" cy="16" r="2.5" fill="#000"/>
+</svg>

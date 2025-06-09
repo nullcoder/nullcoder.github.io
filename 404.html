@@ -1,10 +1,141 @@
----
-layout: default
-title: "404: Page not found"
-permalink: 404.html
----
-
-<div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ site.baseurl }}">Head back home</a> to try finding it again.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>404 | nullcoder</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --text-primary: #000;
+            --text-secondary: #666;
+            --bg: #fff;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #fff;
+                --text-secondary: #b3b3b3;
+                --bg: #000;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
+        
+        .error-code {
+            font-size: clamp(4rem, 10vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: glitchIn 0.6s ease-out forwards;
+        }
+        
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out 0.3s forwards;
+        }
+        
+        .suggestion {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out 0.5s forwards;
+        }
+        
+        .home-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid var(--text-primary);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out 0.7s forwards;
+        }
+        
+        .home-link:hover {
+            background: var(--text-primary);
+            color: var(--bg);
+            transform: scale(1.05);
+        }
+        
+        @keyframes glitchIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scaleX(0.9);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0) scaleX(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scaleX(1);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Null symbol decoration */
+        .null-decoration {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Page not found</p>
+        <p class="suggestion">Looks like this page is null</p>
+        <a href="/" class="home-link">Return home</a>
+    </div>
+    
+    <svg class="null-decoration" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 30 8 A 22 22 0 0 1 52 30 A 22 22 0 0 1 30 52 A 22 22 0 0 1 8 30 A 22 22 0 0 1 30 8 Z M 30 12 A 18 18 0 0 0 12 30 A 18 18 0 0 0 30 48 A 18 18 0 0 0 48 30 A 18 18 0 0 0 30 12 Z" fill="currentColor"/>
+        <path d="M 19 16 L 16 19 L 41 44 L 44 41 Z" fill="currentColor"/>
+        <circle cx="30" cy="30" r="3" fill="currentColor"/>
+    </svg>
+</body>
+</html>

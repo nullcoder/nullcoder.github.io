@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Thanan Traiongthawon
+Site: https://nullcoder.net
+GitHub: https://github.com/nullcoder
+Location: Seattle, WA
+
+/* SITE */
+Last update: 2024/06/09
+Standards: HTML5, CSS3, ES6
+Components: Vanilla JavaScript
+Features: Ghost easter egg (try typing it!)
+Software: VS Code + Claude AI
+Development: Pair programmed with AI
+
+/* SPECIAL THANKS */
+To everyone who crafts code with care
