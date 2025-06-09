@@ -1,48 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://nullcoder.net/">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://nullcoder.net/" />
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Thanan Traiongthawon - Software Engineer at Airbnb. Working on distributed systems and developer tools.">
-    <meta name="keywords" content="Thanan Traiongthawon, nullcoder, software engineer, Airbnb, Seattle">
-    <meta name="author" content="Thanan Traiongthawon">
-    <meta name="generator" content="Human creativity + Claude AI">
-    
+    <meta
+      name="description"
+      content="Thanan Traiongthawon - Software Engineer at Airbnb. Working on distributed systems and developer tools."
+    />
+    <meta
+      name="keywords"
+      content="Thanan Traiongthawon, nullcoder, software engineer, Airbnb, Seattle"
+    />
+    <meta name="author" content="Thanan Traiongthawon" />
+    <meta name="generator" content="Human creativity + Claude AI" />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nullcoder.net/">
-    <meta property="og:title" content="nullcoder | Thanan Traiongthawon">
-    <meta property="og:description" content="Software Engineer at Airbnb. Working on distributed systems and developer tools.">
-    <meta property="og:image" content="https://nullcoder.net/og-image.png">
-    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nullcoder.net/" />
+    <meta property="og:title" content="nullcoder | Thanan Traiongthawon" />
+    <meta
+      property="og:description"
+      content="Software Engineer at Airbnb. Working on distributed systems and developer tools."
+    />
+    <meta property="og:image" content="https://nullcoder.net/og-image.png" />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary">
-    <meta property="twitter:url" content="https://nullcoder.net/">
-    <meta property="twitter:title" content="nullcoder | Thanan Traiongthawon">
-    <meta property="twitter:description" content="Software Engineer at Airbnb. Working on distributed systems and developer tools.">
-    
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://nullcoder.net/" />
+    <meta property="twitter:title" content="nullcoder | Thanan Traiongthawon" />
+    <meta
+      property="twitter:description"
+      content="Software Engineer at Airbnb. Working on distributed systems and developer tools."
+    />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="alternate icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="alternate icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
     <!-- Theme Color -->
-    <meta name="theme-color" content="#ffffff">
-    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-    
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="theme-color"
+      content="#000000"
+      media="(prefers-color-scheme: dark)"
+    />
+
     <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
     <title>nullcoder | Thanan Traiongthawon</title>
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "Person",
         "@id": "https://nullcoder.net/#person",
@@ -50,117 +66,193 @@
         "alternateName": "nullcoder",
         "jobTitle": "Software Engineer",
         "worksFor": {
-            "@type": "Organization",
-            "name": "Airbnb"
+          "@type": "Organization",
+          "name": "Airbnb"
         },
         "url": "https://nullcoder.net",
         "sameAs": [
-            "https://github.com/nullcoder",
-            "https://www.linkedin.com/in/nullcoder/"
+          "https://github.com/nullcoder",
+          "https://www.linkedin.com/in/nullcoder/"
         ],
-        "knowsAbout": ["Distributed Systems", "Software Engineering", "Privacy-First Solutions", "Developer Tools"]
-    }
+        "knowsAbout": [
+          "Distributed Systems",
+          "Software Engineering",
+          "Privacy-First Solutions",
+          "Developer Tools"
+        ]
+      }
     </script>
-    
+
     <!-- Preload critical assets -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="preconnect" href="https://github.com">
-    <link rel="preconnect" href="https://www.linkedin.com">
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="preconnect" href="https://github.com" />
+    <link rel="preconnect" href="https://www.linkedin.com" />
+
+    <link rel="stylesheet" href="style.css" />
     <noscript>
-        <style>
-            .hint { display: none !important; }
-            #particles { display: none !important; }
-            .ai-footer,
-            .ai-footer-trigger { display: none !important; }
-            .icon-wrapper { 
-                animation: none !important;
-                opacity: 1 !important;
-            }
-            .ghost-icon { display: none !important; }
-            .null-icon { 
-                display: block !important; 
-                opacity: 1 !important; 
-                animation: none !important;
-                visibility: visible !important;
-                width: 100px !important;
-                height: 100px !important;
-            }
-            .null-icon::after {
-                display: none !important;
-            }
-            /* Ensure SVG paths are visible */
-            .null-ring {
-                fill: #000 !important;
-                opacity: 1 !important;
-            }
-            .null-slash {
-                fill: #000 !important;
-                opacity: 1 !important;
-            }
-            @media (prefers-color-scheme: dark) {
-                .null-ring,
-                .null-slash {
-                    fill: #fff !important;
-                }
-            }
-        </style>
+      <style>
+        .hint {
+          display: none !important;
+        }
+        #particles {
+          display: none !important;
+        }
+        .ai-footer,
+        .ai-footer-trigger {
+          display: none !important;
+        }
+        .icon-wrapper {
+          animation: none !important;
+          opacity: 1 !important;
+        }
+        .ghost-icon {
+          display: none !important;
+        }
+        .null-icon {
+          display: block !important;
+          opacity: 1 !important;
+          animation: none !important;
+          visibility: visible !important;
+          width: 100px !important;
+          height: 100px !important;
+        }
+        .null-icon::after {
+          display: none !important;
+        }
+        /* Ensure SVG paths are visible */
+        .null-ring {
+          fill: #000 !important;
+          opacity: 1 !important;
+        }
+        .null-slash {
+          fill: #000 !important;
+          opacity: 1 !important;
+        }
+        @media (prefers-color-scheme: dark) {
+          .null-ring,
+          .null-slash {
+            fill: #fff !important;
+          }
+        }
+      </style>
     </noscript>
-</head>
-<body>
+  </head>
+  <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container" id="main-content">
-        <header class="hero">
-            <div class="icon-wrapper">
-                <!-- Abstract null symbol -->
-                <svg class="null-icon" width="100" height="100" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" tabindex="0" role="button" aria-label="Interactive null symbol - press Enter to activate">
-                    <title>Null symbol</title>
-                    <path class="null-ring" d="M 30 8 A 22 22 0 0 1 52 30 A 22 22 0 0 1 30 52 A 22 22 0 0 1 8 30 A 22 22 0 0 1 30 8 Z M 30 12 A 18 18 0 0 0 12 30 A 18 18 0 0 0 30 48 A 18 18 0 0 0 48 30 A 18 18 0 0 0 30 12 Z" />
-                    <path class="null-slash" d="M 18 15 L 15 18 L 42 45 L 45 42 Z" />
-                    <circle class="null-dot" cx="30" cy="30" r="3" />
-                </svg>
-                
-                <!-- Ghost easter egg -->
-                <svg class="ghost-icon" width="100" height="100" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="display: none;" tabindex="0" role="button" aria-label="Ghost mascot - press Enter to make it blink">
-                    <title>Ghost mascot</title>
-                    <path class="ghost-body" d="M30 10 C20 10, 10 20, 10 30 L10 45 L15 40 L20 45 L25 40 L30 45 L35 40 L40 45 L45 40 L50 45 L50 30 C50 20, 40 10, 30 10 Z" />
-                    <circle class="ghost-eye" cx="22" cy="25" r="3" />
-                    <circle class="ghost-eye" cx="38" cy="25" r="3" />
-                </svg>
-            </div>
-            <h1 class="name" data-text="nullcoder">nullcoder</h1>
-            <p class="real-name">Thanan Traiongthawon</p>
-            <p class="role">Crafting code with care</p>
-        </header>
-        
-        <nav class="links">
-            <a href="https://github.com/nullcoder" target="_blank" class="link" aria-label="GitHub profile">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                    <path d="M12 0C5.374 0 0 5.373 0 12C0 17.302 3.438 21.8 8.207 23.387C8.806 23.498 9 23.126 9 22.81V20.576C5.662 21.302 4.967 19.16 4.967 19.16C4.422 17.773 3.633 17.404 3.633 17.404C2.546 16.659 3.717 16.675 3.717 16.675C4.922 16.759 5.556 17.912 5.556 17.912C6.626 19.746 8.363 19.216 9.048 18.909C9.155 18.134 9.466 17.604 9.81 17.305C7.145 17 4.343 15.971 4.343 11.374C4.343 10.063 4.812 8.993 5.579 8.153C5.455 7.85 5.044 6.629 5.696 4.977C5.696 4.977 6.704 4.655 8.997 6.207C9.954 5.941 10.98 5.808 12 5.803C13.02 5.808 14.047 5.941 15.006 6.207C17.297 4.655 18.303 4.977 18.303 4.977C18.956 6.63 18.545 7.851 18.421 8.153C19.191 8.993 19.656 10.064 19.656 11.374C19.656 15.983 16.849 16.998 14.177 17.295C14.607 17.667 15 18.397 15 19.517V22.81C15 23.129 15.192 23.504 15.801 23.386C20.566 21.797 24 17.3 24 12C24 5.373 18.627 0 12 0Z" fill="currentColor"/>
-                </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/nullcoder/" target="_blank" class="link" aria-label="LinkedIn profile">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                    <path d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.401 4.23 7.401 5.368C7.401 6.507 6.476 7.433 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z" fill="currentColor"/>
-                </svg>
-            </a>
-        </nav>
+      <header class="hero">
+        <div class="icon-wrapper">
+          <!-- Abstract null symbol -->
+          <svg
+            class="null-icon"
+            width="100"
+            height="100"
+            viewBox="0 0 60 60"
+            xmlns="http://www.w3.org/2000/svg"
+            tabindex="0"
+            role="button"
+            aria-label="Interactive null symbol - press Enter to activate"
+          >
+            <title>Null symbol</title>
+            <path
+              class="null-ring"
+              d="M 30 8 A 22 22 0 0 1 52 30 A 22 22 0 0 1 30 52 A 22 22 0 0 1 8 30 A 22 22 0 0 1 30 8 Z M 30 12 A 18 18 0 0 0 12 30 A 18 18 0 0 0 30 48 A 18 18 0 0 0 48 30 A 18 18 0 0 0 30 12 Z"
+            />
+            <path class="null-slash" d="M 18 15 L 15 18 L 42 45 L 45 42 Z" />
+            <circle class="null-dot" cx="30" cy="30" r="3" />
+          </svg>
+
+          <!-- Ghost easter egg -->
+          <svg
+            class="ghost-icon"
+            width="100"
+            height="100"
+            viewBox="0 0 60 60"
+            xmlns="http://www.w3.org/2000/svg"
+            style="display: none"
+            tabindex="0"
+            role="button"
+            aria-label="Ghost mascot - press Enter to make it blink"
+          >
+            <title>Ghost mascot</title>
+            <path
+              class="ghost-body"
+              d="M30 10 C20 10, 10 20, 10 30 L10 45 L15 40 L20 45 L25 40 L30 45 L35 40 L40 45 L45 40 L50 45 L50 30 C50 20, 40 10, 30 10 Z"
+            />
+            <circle class="ghost-eye" cx="22" cy="25" r="3" />
+            <circle class="ghost-eye" cx="38" cy="25" r="3" />
+          </svg>
+        </div>
+        <h1 class="name" data-text="nullcoder">nullcoder</h1>
+        <p class="real-name">Thanan Traiongthawon</p>
+        <p class="role">Crafting code with care</p>
+      </header>
+
+      <nav class="links">
+        <a
+          href="https://github.com/nullcoder"
+          target="_blank"
+          class="link"
+          aria-label="GitHub profile"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12C0 17.302 3.438 21.8 8.207 23.387C8.806 23.498 9 23.126 9 22.81V20.576C5.662 21.302 4.967 19.16 4.967 19.16C4.422 17.773 3.633 17.404 3.633 17.404C2.546 16.659 3.717 16.675 3.717 16.675C4.922 16.759 5.556 17.912 5.556 17.912C6.626 19.746 8.363 19.216 9.048 18.909C9.155 18.134 9.466 17.604 9.81 17.305C7.145 17 4.343 15.971 4.343 11.374C4.343 10.063 4.812 8.993 5.579 8.153C5.455 7.85 5.044 6.629 5.696 4.977C5.696 4.977 6.704 4.655 8.997 6.207C9.954 5.941 10.98 5.808 12 5.803C13.02 5.808 14.047 5.941 15.006 6.207C17.297 4.655 18.303 4.977 18.303 4.977C18.956 6.63 18.545 7.851 18.421 8.153C19.191 8.993 19.656 10.064 19.656 11.374C19.656 15.983 16.849 16.998 14.177 17.295C14.607 17.667 15 18.397 15 19.517V22.81C15 23.129 15.192 23.504 15.801 23.386C20.566 21.797 24 17.3 24 12C24 5.373 18.627 0 12 0Z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/nullcoder/"
+          target="_blank"
+          class="link"
+          aria-label="LinkedIn profile"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.401 4.23 7.401 5.368C7.401 6.507 6.476 7.433 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+      </nav>
     </div>
-    
-    <canvas id="particles" role="presentation" aria-label="Decorative particle animation"></canvas>
-    
+
+    <canvas
+      id="particles"
+      role="presentation"
+      aria-label="Decorative particle animation"
+    ></canvas>
+
     <!-- Subtle hint -->
-    <div class="hint" aria-hidden="true"><span class="hint-desktop">?</span></div>
-    
+    <div class="hint" aria-hidden="true">
+      <span class="hint-desktop">?</span>
+    </div>
+
     <!-- Hidden footer trigger zone -->
     <div class="ai-footer-trigger" aria-hidden="true"></div>
-    
+
     <!-- Hidden footer -->
     <footer class="ai-footer" aria-label="Built with AI collaboration">
-        <p>Pair programmed with AI</p>
+      <p>Pair programmed with AI</p>
     </footer>
-    
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
