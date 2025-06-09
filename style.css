@@ -395,6 +395,18 @@ body {
         width: 22px;
         height: 22px;
     }
+    
+    /* Adjust hint for mobile */
+    .hint {
+        display: block !important;
+        bottom: 30px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        background: rgba(150, 150, 150, 0.15);
+        border: 2px solid rgba(150, 150, 150, 0.3);
+    }
 }
 
 /* Easter egg hint */
@@ -439,6 +451,35 @@ body {
     pointer-events: none;
     transform: translateY(10px);
     transition: all 0.3s ease;
+}
+
+/* Mobile hint */
+@media (max-width: 768px) {
+    .hint {
+        /* Simpler approach - just show text directly */
+        width: auto;
+        height: auto;
+        padding: 8px 12px;
+        font-size: 12px;
+        color: rgba(150, 150, 150, 0.8);
+        background: rgba(150, 150, 150, 0.1);
+        border: 1px solid rgba(150, 150, 150, 0.2);
+        border-radius: 20px;
+    }
+    
+    .hint-desktop {
+        display: none;
+    }
+    
+    .hint::before {
+        content: 'Long press the logo';
+        font-size: 12px;
+    }
+    
+    /* Hide the question mark and tooltip on mobile */
+    .hint::after {
+        display: none;
+    }
 }
 
 .hint:hover::after {

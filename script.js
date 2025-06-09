@@ -134,6 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Null icon interaction - morphs on click or Enter key
     const nullIcon = document.querySelector('.null-icon');
+    const ghostIcon = document.querySelector('.ghost-icon');
+    
     if (nullIcon) {
         const triggerAnimation = () => {
             nullIcon.style.transform = 'scale(1.1) rotate(180deg)';
@@ -142,7 +144,58 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 300);
         };
         
-        nullIcon.addEventListener('click', triggerAnimation);
+        // Mobile long press to reveal ghost
+        let pressTimer;
+        let longPressTriggered = false;
+        
+        const startPress = (e) => {
+            longPressTriggered = false;
+            pressTimer = setTimeout(() => {
+                longPressTriggered = true;
+                // Trigger ghost reveal
+                if (!ghostIcon.classList.contains('ghost-revealed')) {
+                    revealGhost();
+                }
+            }, 1000); // 1 second long press
+        };
+        
+        const endPress = (e) => {
+            clearTimeout(pressTimer);
+            if (!longPressTriggered) {
+                // Regular click animation
+                triggerAnimation();
+            }
+        };
+        
+        // Touch events for mobile
+        nullIcon.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevent text selection
+            startPress(e);
+        }, { passive: false });
+        
+        nullIcon.addEventListener('touchend', (e) => {
+            e.preventDefault(); // Prevent click event
+            endPress(e);
+        }, { passive: false });
+        
+        nullIcon.addEventListener('touchcancel', () => clearTimeout(pressTimer));
+        
+        // Mouse events for desktop
+        nullIcon.addEventListener('mousedown', startPress);
+        nullIcon.addEventListener('mouseup', endPress);
+        nullIcon.addEventListener('mouseleave', () => clearTimeout(pressTimer));
+        
+        // Click for regular animation (desktop only)
+        nullIcon.addEventListener('click', (e) => {
+            // Only trigger if not a touch event
+            if (!e.sourceCapabilities || !e.sourceCapabilities.firesTouchEvents) {
+                if (!longPressTriggered) {
+                    e.preventDefault();
+                    triggerAnimation();
+                }
+            }
+        });
+        
         nullIcon.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -150,6 +203,72 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // Function to reveal ghost
+    const revealGhost = () => {
+        const ghostIcon = document.querySelector('.ghost-icon');
+        const nullIcon = document.querySelector('.null-icon');
+        
+        if (!ghostIcon.classList.contains('ghost-revealed')) {
+            // Hide null icon with fade
+            nullIcon.style.transition = 'opacity 0.3s ease';
+            nullIcon.style.opacity = '0';
+            
+            setTimeout(() => {
+                nullIcon.style.display = 'none';
+                ghostIcon.classList.add('ghost-revealed');
+                
+                // Hide hint
+                const hint = document.querySelector('.hint');
+                if (hint) {
+                    hint.style.opacity = '0';
+                    hint.style.pointerEvents = 'none';
+                }
+                
+                // Add blink interaction for click and keyboard
+                const blinkGhost = () => {
+                    const eyes = ghostIcon.querySelectorAll('.ghost-eye');
+                    eyes.forEach(eye => {
+                        eye.style.opacity = '0';
+                        setTimeout(() => {
+                            eye.style.opacity = '1';
+                        }, 150);
+                    });
+                };
+                
+                ghostIcon.addEventListener('click', blinkGhost);
+                ghostIcon.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        blinkGhost();
+                    }
+                });
+                
+                // Touch support for ghost blink
+                ghostIcon.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    blinkGhost();
+                });
+                
+                // Optional: Type "null" to switch back (desktop only)
+                let nullSequence = '';
+                document.addEventListener('keypress', (e) => {
+                    nullSequence += e.key.toLowerCase();
+                    if (nullSequence.length > 4) {
+                        nullSequence = nullSequence.slice(-4);
+                    }
+                    if (nullSequence === 'null') {
+                        ghostIcon.classList.remove('ghost-revealed');
+                        setTimeout(() => {
+                            ghostIcon.style.display = 'none';
+                            nullIcon.style.display = 'block';
+                            nullIcon.style.opacity = '1';
+                        }, 600);
+                    }
+                });
+            }, 300);
+        }
+    };
     
     // Ghost easter egg - type "ghost" to reveal
     let ghostSequence = '';
@@ -165,65 +284,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Check if ghost was typed
         if (ghostSequence === ghostTrigger) {
-            const ghostIcon = document.querySelector('.ghost-icon');
-            const nullIcon = document.querySelector('.null-icon');
-            
-            if (!ghostIcon.classList.contains('ghost-revealed')) {
-                // Hide null icon with fade
-                nullIcon.style.transition = 'opacity 0.3s ease';
-                nullIcon.style.opacity = '0';
-                
-                setTimeout(() => {
-                    nullIcon.style.display = 'none';
-                    ghostIcon.classList.add('ghost-revealed');
-                    
-                    // Hide hint
-                    const hint = document.querySelector('.hint');
-                    if (hint) {
-                        hint.style.opacity = '0';
-                        hint.style.pointerEvents = 'none';
-                    }
-                    
-                    // Reset sequence
-                    ghostSequence = '';
-                    
-                    // Add blink interaction for click and keyboard
-                    const blinkGhost = () => {
-                        const eyes = ghostIcon.querySelectorAll('.ghost-eye');
-                        eyes.forEach(eye => {
-                            eye.style.opacity = '0';
-                            setTimeout(() => {
-                                eye.style.opacity = '1';
-                            }, 150);
-                        });
-                    };
-                    
-                    ghostIcon.addEventListener('click', blinkGhost);
-                    ghostIcon.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            blinkGhost();
-                        }
-                    });
-                    
-                    // Optional: Type "null" to switch back
-                    let nullSequence = '';
-                    document.addEventListener('keypress', (e) => {
-                        nullSequence += e.key.toLowerCase();
-                        if (nullSequence.length > 4) {
-                            nullSequence = nullSequence.slice(-4);
-                        }
-                        if (nullSequence === 'null') {
-                            ghostIcon.classList.remove('ghost-revealed');
-                            setTimeout(() => {
-                                ghostIcon.style.display = 'none';
-                                nullIcon.style.display = 'block';
-                                nullIcon.style.opacity = '1';
-                            }, 600);
-                        }
-                    });
-                }, 300);
-            }
+            revealGhost();
+            // Reset sequence
+            ghostSequence = '';
         }
     });
 });
