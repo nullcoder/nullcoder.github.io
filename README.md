@@ -28,4 +28,4 @@ This site was pair programmed with Claude AI, exploring human-AI collaboration i
 
 ## 📝 License
 
-© 2024 Thanan Traiongthawon. All rights reserved.
+© 2025 Thanan Traiongthawon. All rights reserved.
